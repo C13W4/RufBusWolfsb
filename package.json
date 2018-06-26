@@ -1,0 +1,23 @@
+{
+  "name": "rufbuswolfsb",
+  "version": "1.0.0",
+  "description": "Rufbusmanagement der Stadt Wolfsburg",
+  "main": "app.js",
+  "dependencies": {
+    "bootstrap": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C13W4/RufBusWolfsb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C13W4/RufBusWolfsb/issues"
+  },
+  "homepage": "https://github.com/C13W4/RufBusWolfsb#readme"
+}
