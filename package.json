@@ -4,7 +4,8 @@
   "description": "Rufbusmanagement der Stadt Wolfsburg",
   "main": "app.js",
   "dependencies": {
-    "bootstrap": "^4.1.1"
+    "bootstrap": "^4.1.1",
+    "fs": "0.0.1-security"
   },
   "devDependencies": {},
   "scripts": {
