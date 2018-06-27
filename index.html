@@ -1,10 +1,85 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>Test</title>
+
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+
+<!-- Custom styles for this template -->
 </head>
 <body>
-	<h1>Hallo Christoph</h1>
+  <br/>
+  <center>
+ 
+   <!-- <img src="../logo.jpg" alt="Logo" height="130" width="130"> -->
+   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Zeichen_224.svg/240px-Zeichen_224.svg.png" alt="Logo" height="160" width="160">
 
+  <br><br><br>
+  
+
+  <form class="form-horizontal" role="form" style="width: 50%; text-align: left; ">
+
+  	<p class="text-left">Hallo und Herzlich Willkommen,</p>
+  
+	<p class="text-left">Sie k&ouml;nnen hier Ihren Rufbus f&uumlr das Stadtgebiet von Wolfsburg bestellen. <p> Dieser Service steht Ihnen in der Zeit von 0 - 5 Uhr am Samstag und Sonntag zur Verf&uumlgung.</p>
+
+	<br>
+	<br>
+
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Vorname & Nachname" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Mobilnummer" class="col-sm-2 control-label">Mobilnummer</label>
+        <div class="col-sm-10">
+            <input type="Mobilnummer" class="form-control" id="Mobilnummer" name="Mobilnummer" placeholder="+49" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Passagiere" class="col-sm-10 control-label">Anzahl Passagiere</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" id="Passagiere" name="Passagiere" value="" min="1" max="9">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Haltestelle" class="col-sm-2 control-label">Abholung / Start</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Haltestelle" name="Haltestelle" placeholder="Haltestelle">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Ziel" class="col-sm-2 control-label">Ziel</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Ziel" name="Ziel" placeholder="Ziel Adresse">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10">
+            <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <! Will be used to display an alert to the user>
+        </div>
+    </div>
+</form>
+</center>
+  </div>
 </body>
+
+
+ <!-- Bootstrap core JavaScript
+ =============================================================== -->
+ <!-- Placed at the end of the document so the pages load faster -->
+<!--
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+-->
 </html>
