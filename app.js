@@ -47,37 +47,19 @@ app.get('/booking', function(req, res) {
 
 //Eingabe Daten per POST verarbeiten
 app.post('/', urlencodedParser,  function(req, res) {
-
-	let now = new Date();
-    let two_minutes_later = date.addMinutes(now, 30);
   
 	console.log('\nName: ' + req.body.name);
     console.log('Datum/Uhrzeit: ' + req.body.mydatetimepicker);
     console.log('Abholung: ' + req.body.Haltestelle);
-    console.log('Ziel: ' + req.body.Ziel);
+    console.log('Ziel: ' + req.body.Ziel);  
 
-    console.log('Eingabe: ' + req.body.mydatetimepicker);
-    console.log('Erwartet: ' + date.format(now, 'DD.MM.YYYY HH:mm') );    
-    let later = date.addMinutes(now, 30);
-    console.log('Erwartet: ' + date.format(later, 'DD.MM.YYYY HH:mm') );    
-
-    if(req.body.mydatetimepicker >= date.format(later, 'DD.MM.YYYY HH:mm')){
-
-		res.redirect('booking');
-
-    } else {
-
-
-
-    }
-    
-		connection.query("INSERT INTO Buchungen(Name, Rufnummer, Passenger, Datum, Pickup, Target) VALUES ('"+req.body.name+"','"+req.body.Mobilnummer+"','"+req.body.Passagiere+"','"+req.body.mydatetimepicker+"','"+req.body.Haltestelle+"','"+req.body.Ziel+"')", function(err, result){
-	    if(err) throw err;
+	connection.query("INSERT INTO Buchungen(Name, Rufnummer, Passenger, Datum, Pickup, Target) VALUES ('"+req.body.name+"','"+req.body.Mobilnummer+"','"+req.body.Passagiere+"','"+req.body.mydatetimepicker+"','"+req.body.Haltestelle+"','"+req.body.Ziel+"')", function(err, result){
+	if(err) throw err;
 	        
-	        console.log("1 Datensatz eingefügt");
+	    console.log("1 Datensatz eingefügt");
 
-	        res.end(req.body.name);
-	    });
+	    res.end(req.body.name);
+	});
 });
 
 
