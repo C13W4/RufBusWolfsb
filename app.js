@@ -65,7 +65,11 @@ app.post('/', urlencodedParser,  function(req, res) {
 
 		res.redirect('booking');
 
-    } else {}
+    } else {
+
+
+
+    }
     
 		connection.query("INSERT INTO Buchungen(Name, Rufnummer, Passenger, Datum, Pickup, Target) VALUES ('"+req.body.name+"','"+req.body.Mobilnummer+"','"+req.body.Passagiere+"','"+req.body.mydatetimepicker+"','"+req.body.Haltestelle+"','"+req.body.Ziel+"')", function(err, result){
 	    if(err) throw err;
@@ -74,7 +78,6 @@ app.post('/', urlencodedParser,  function(req, res) {
 
 	        res.end(req.body.name);
 	    });
-	}
 });
 
 
