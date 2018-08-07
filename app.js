@@ -4,14 +4,14 @@ var app = express();
 var mysql = require('mysql');
 var path = require('path');
 var bodyParser = require('body-parser');
-
+/*
 var connection = mysql.createConnection({
         host: 'mycloud',
         user: 'WVG_DB',
         password: '8mA84UJ175md',
         database: "WVG_DATA",
         port: 3307
-});
+});*/
 
 const http = require('http');
 const fs = require('fs');
@@ -19,17 +19,16 @@ const { parse } = require('querystring');
 const hostname = 'localhost';
 const router = express.Router();
  
-let date = require('date-and-time');
 
 // Konfiguration...
 app.use(express.static(__dirname + '/html'));
-app.use(express.static(__dirname + '/bootstrap/'));
+/*app.use(express.static(__dirname + '/bootstrap/'));
 
 // Datenbankverbindung herstellen
 connection.connect(function(err) {
   if (err) throw err;
   console.log("\nConnected to mysql: WVG_DATA\n");
-});
+});*/
 
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -47,37 +46,21 @@ app.get('/booking', function(req, res) {
 
 //Eingabe Daten per POST verarbeiten
 app.post('/', urlencodedParser,  function(req, res) {
-
-	let now = new Date();
-    let two_minutes_later = date.addMinutes(now, 30);
   
 	console.log('\nName: ' + req.body.name);
-    console.log('Datum/Uhrzeit: ' + req.body.mydatetimepicker);
+    console.log('Datum/Uhrzeit: ' + req.body.datetimepicker);
     console.log('Abholung: ' + req.body.Haltestelle);
     console.log('Ziel: ' + req.body.Ziel);
 
-    console.log('Eingabe: ' + req.body.mydatetimepicker);
-    console.log('Erwartet: ' + date.format(now, 'DD.MM.YYYY HH:mm') );    
-    let later = date.addMinutes(now, 30);
-    console.log('Erwartet: ' + date.format(later, 'DD.MM.YYYY HH:mm') );    
+    res.end("\nHallo "+req.body.name+",\n\nSie werden abgeholt am: "+req.body.datetimepicker+"\n\nan der Haltestelle: "+req.body.Haltestelle+"\n\n\nVielen Dank das Sie unseren Service der WVG nutzen!");
 
-    if(req.body.mydatetimepicker >= date.format(later, 'DD.MM.YYYY HH:mm')){
-
-		res.redirect('booking');
-
-    } else {
-
-
-
-    }
-    
-		connection.query("INSERT INTO Buchungen(Name, Rufnummer, Passenger, Datum, Pickup, Target) VALUES ('"+req.body.name+"','"+req.body.Mobilnummer+"','"+req.body.Passagiere+"','"+req.body.mydatetimepicker+"','"+req.body.Haltestelle+"','"+req.body.Ziel+"')", function(err, result){
+/*    
+		connection.query("INSERT INTO Buchungen(Name, Rufnummer, Passenger, Datum, Pickup, Target) VALUES ('"+req.body.name+"','"+req.body.Mobilnummer+"','"+req.body.Passagiere+"','"+req.body.datetimepicker+"','"+req.body.Haltestelle+"','"+req.body.Ziel+"')", function(err, result){
 	    if(err) throw err;
 	        
 	        console.log("1 Datensatz eingefügt");
 
-	        res.end(req.body.name);
-	    });
+	    });*/
 });
 
 
