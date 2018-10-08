@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var date = require('date-and-time');
 
 var connection = mysql.createConnection({
-        host: 'mycloud',
+        host: 'localhost',
         user: 'WVG_DB',
         password: '8mA84UJ175md',
         database: "WVG_DATA",
@@ -62,13 +62,13 @@ app.post('/', urlencodedParser,  function(req, res) {
 
 		  	if (result[0].ID_BUS == 0){
 
-		  		res.end("Leider ist zur gewuenschten Zeit kein Bus mehr frei, bitte melden Sie sich telefonisch.");
+		  		res.end("<html><body><center><br><br>Leider ist zur gewuenschten Zeit kein Bus mehr frei, bitte melden Sie sich telefonisch.</center></body></html>");
 
 
 		  	} else {
 
 		  		// Select from DB für aktuelle Daten
-		  		res.end("\nHallo "+req.body.name+",\n\nSie werden abgeholt am: "+req.body.datetimepicker+"\n\nan der Haltestelle: "+req.body.Haltestelle+"\n\n\nVielen Dank das Sie unseren Service der WVG nutzen!");
+		  		res.send("<html><body><center><br><br>Hallo "+req.body.name+",<br><br>Sie werden abgeholt am: <h3>"+req.body.datetimepicker+"Uhr</h3><br><br>an der Haltestelle: <h3>"+req.body.Haltestelle+"</h3></center></body></html>");
 
 		  	}
 
@@ -79,7 +79,7 @@ app.post('/', urlencodedParser,  function(req, res) {
 
     	// Buchungszeit ist zu kurzfristig (< 20 min. oder in der Vergangenheit)
 
-    	res.end("Ihr Buchungsdatum liegt in der Vergangenheit.");
+    	res.end("<html><body><center><br><br>Ihr Buchungsdatum liegt in der Vergangenheit.</center></body></html>");
 
     }
 
