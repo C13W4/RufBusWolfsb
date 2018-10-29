@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
         user: 'WVG_DB',
         password: '8mA84UJ175md',
         database: "WVG_DATA",
-        port: 3307
+        port: 3307,
 });
 
 
@@ -84,6 +84,23 @@ app.post('/', urlencodedParser,  function(req, res) {
     }
 
 });
+
+
+// Autocomplete für Haltestellen bei Buchung
+app.get('/search', function(req,res){
+
+  connection.query('SELECT haltestelle from haltestellen where UPPER(haltestelle) like UPPER("%'+req.query.query+'%")',
+  function(err, rows, fields) {
+  if (err) throw err;
+  var data=[];
+  for(i=0;i<rows.length;i++)
+  {
+    data.push(rows[i].haltestelle);
+  }
+  res.end(JSON.stringify(data));
+  });
+});
+
 
 //Server start
 app.listen(3000);
